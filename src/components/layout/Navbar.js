@@ -55,10 +55,49 @@ const Navbar = () => {
               textDecoration: 'none',
             }}
           >
-            <img src={logo} alt="Logo" style={{ height: 'auto', maxWidth: '40%' }}/>
+            <img 
+              src={logo} 
+              alt="Logo" 
+              style={{ 
+                height: 'auto',
+                width: '40%',
+                maxWidth: {
+                  xs: '80px',  // Para móviles
+                  sm: '100px', // Para tablets
+                  md: '120px'  // Para desktop
+                },
+                objectFit: 'contain'
+              }}
+            />
           </Typography>
 
-          {/* Menú hamburguesa para móvil */}
+          {/* Y en la parte del logo para móvil */}
+          <Typography
+            variant="h6"
+            noWrap
+            sx={{
+              flexGrow: 1,
+              display: { xs: 'flex', md: 'none' },
+              fontFamily: 'Playfair Display, serif',
+              fontWeight: 700,
+              color: 'inherit',
+              textDecoration: 'none',
+              justifyContent: 'center',
+              alignItems: 'center'
+            }}
+          >
+            <img 
+              src={logo} 
+              alt="Logo" 
+              style={{ 
+                height: 'auto',
+                width: '40%',
+                objectFit: 'contain'
+              }}
+            />
+          </Typography>
+
+          
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -80,23 +119,6 @@ const Navbar = () => {
               ))}
             </Menu>
           </Box>
-
-          {/* Logo para móvil */}
-          <Typography
-            variant="h6"
-            noWrap
-            sx={{
-              flexGrow: 1,
-              display: { xs: 'flex', md: 'none' },
-              fontFamily: 'Playfair Display, serif',
-              fontWeight: 700,
-              color: 'inherit',
-              textDecoration: 'none',
-              justifyContent: 'center'
-            }}
-          >
-            Le Boîte
-          </Typography>
 
           {/* Navegación para pantallas grandes */}
           <Stack
